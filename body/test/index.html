@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <style type="text/css">
+    .body div{
+        font-size: 200px;
+        color: #777;
+        text-align: center;
+        line-height: 667px;
+    }
+    </style>
+</head>
+<body>
+    <script type="text/javascript" src="../dist/index.js"></script>
+	<script type="text/javascript">
+        var body = new MBody();
+        var index = 0;
+        body.get().innerHTML = index ++;
+        body.next();
+        body.container.onclick = function(){
+            body.get().innerHTML = index ++;
+            body.next();
+        };
+	</script>
+</body>
+</html>

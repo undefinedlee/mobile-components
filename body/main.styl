@@ -1,0 +1,34 @@
+$panel
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+
+.body
+	@extend $panel
+	overflow: hidden
+	.pre
+	.current
+	.next
+		@extend $panel
+
+.body-scroll
+	.animate
+		transition: transform .5s cubic-bezier(0, 0, 0, 1)
+	.pre
+		transform: translateX(-100%)
+	.current
+		transform: translateX(0)
+	.next
+		transform: translateX(100%)
+
+.body-opacity
+	.animate
+		transition: opacity .5s linear
+	.pre
+	.next
+		opacity: 0
+	.current
+		opacity: 1
+		z-index: 1

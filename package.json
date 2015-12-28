@@ -1,0 +1,28 @@
+{
+  "name": "mobile-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/undefinedlee/mobile-components.git"
+  },
+  "keywords": [
+    "mobile"
+  ],
+  "author": "undefinedlee.lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/undefinedlee/mobile-components/issues"
+  },
+  "homepage": "https://github.com/undefinedlee/mobile-components#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-all-in-one": "^1.0.1",
+    "gulp-stylus": "^2.1.2"
+  }
+}
