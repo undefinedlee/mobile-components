@@ -4,6 +4,7 @@ $panel
 	right: 0
 	top: 0
 	bottom: 0
+	background-color: #fff
 
 .body
 	@extend $panel
@@ -14,12 +15,16 @@ $panel
 		@extend $panel
 
 .body-scroll
-	.animate
-		transition: transform .5s cubic-bezier(0, 0, 0, 1)
 	.pre
-		transform: translateX(-100%)
+		transform: translateX(-33%)
+		&.animate
+			transition: transform .5s linear
 	.current
 		transform: translateX(0)
+		box-shadow: 0 0 20px rgba(0, 0, 0, .2)
+		z-index: 1
+		&.animate
+			transition: transform .5s cubic-bezier(0, 0, 0, 1)
 	.next
 		transform: translateX(100%)
 

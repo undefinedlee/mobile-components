@@ -20,12 +20,12 @@
 	
 	// main.styl
 	define("1", function(require, exports, module){
-		module.exports = $all_in_one_css_injector('.body,\n.body .pre,\n.body .current,\n.body .next {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n}\n.body {\n  overflow: hidden;\n}\n.body-scroll .animate {\n  transition: transform 0.5s cubic-bezier(0, 0, 0, 1);\n}\n.body-scroll .pre {\n  transform: translateX(-100%);\n}\n.body-scroll .current {\n  transform: translateX(0);\n}\n.body-scroll .next {\n  transform: translateX(100%);\n}\n.body-opacity .animate {\n  transition: opacity 0.5s linear;\n}\n.body-opacity .pre,\n.body-opacity .next {\n  opacity: 0;\n}\n.body-opacity .current {\n  opacity: 1;\n  z-index: 1;\n}\n');
+		module.exports = $all_in_one_css_injector('.body,\n.body .pre,\n.body .current,\n.body .next {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  background-color: #fff;\n}\n.body {\n  overflow: hidden;\n}\n.body-scroll .pre {\n  transform: translateX(-33%);\n}\n.body-scroll .pre.animate {\n  transition: transform 0.5s linear;\n}\n.body-scroll .current {\n  transform: translateX(0);\n  box-shadow: 0 0 20px rgba(0,0,0,0.2);\n  z-index: 1;\n}\n.body-scroll .current.animate {\n  transition: transform 0.5s cubic-bezier(0, 0, 0, 1);\n}\n.body-scroll .next {\n  transform: translateX(100%);\n}\n.body-opacity .animate {\n  transition: opacity 0.5s linear;\n}\n.body-opacity .pre,\n.body-opacity .next {\n  opacity: 0;\n}\n.body-opacity .current {\n  opacity: 1;\n  z-index: 1;\n}\n');
 	});
 
 	// main.tpl
 	define("2", function(require, exports, module){
-		module.exports = '<div class="body body-scroll">\r\n\t<div class="pre"></div>\r\n\t<div class="current"></div>\r\n\t<div class="next"></div>\r\n</div>';
+		module.exports = '<div class="body body-scroll">\n\t<div class="pre"></div>\n\t<div class="current"></div>\n\t<div class="next"></div>\n</div>';
 	});
 
 	// index.js
