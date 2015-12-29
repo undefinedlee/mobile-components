@@ -16,7 +16,9 @@
 <body>
     <script type="text/javascript" src="../dist/index.js"></script>
 	<script type="text/javascript">
-        var body = new MBody();
+        var body = new MBody({
+            animate: "scroll"
+        });
         var index = 0;
         body.get().innerHTML = index ++;
         body.next();

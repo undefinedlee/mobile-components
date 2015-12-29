@@ -13,20 +13,33 @@ $panel
 	.current
 	.next
 		@extend $panel
+	.current
+		z-index: 1
 
 .body-scroll
 	.pre
 		transform: translateX(-33%)
-		&.animate
-			transition: transform .5s linear
 	.current
 		transform: translateX(0)
-		box-shadow: 0 0 20px rgba(0, 0, 0, .2)
-		z-index: 1
-		&.animate
-			transition: transform .5s cubic-bezier(0, 0, 0, 1)
 	.next
 		transform: translateX(100%)
+	&.scroll-next
+		.pre
+			&.animate
+				transition: transform .5s cubic-bezier(0, 0, 0, 1)
+		.current
+			box-shadow: 0 0 20px rgba(0, 0, 0, .2)
+			&.animate
+				transition: transform .5s cubic-bezier(0, 0, 0, 1)
+	&.scroll-pre
+		.current
+			&.animate
+				transition: transform .5s cubic-bezier(0, 0, 0, 1)
+		.next
+			box-shadow: 0 0 20px rgba(0, 0, 0, .2)
+			z-index: 2
+			&.animate
+				transition: transform .5s cubic-bezier(0, 0, 0, 1)
 
 .body-opacity
 	.animate
@@ -36,4 +49,3 @@ $panel
 		opacity: 0
 	.current
 		opacity: 1
-		z-index: 1
