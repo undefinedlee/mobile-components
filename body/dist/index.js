@@ -20,7 +20,7 @@
 	
 	// main.styl
 	define("1", function(require, exports, module){
-		module.exports = $all_in_one_css_injector('.body,\n.body .pre,\n.body .current,\n.body .next {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  background-color: #fff;\n}\n.body {\n  overflow: hidden;\n}\n.body .current {\n  z-index: 1;\n}\n.body-scroll .pre {\n  transform: translateX(-33%);\n}\n.body-scroll .current {\n  transform: translateX(0);\n}\n.body-scroll .next {\n  transform: translateX(100%);\n}\n.body-scroll.scroll-next .pre.animate {\n  transition: transform 0.5s cubic-bezier(0, 0, 0, 1);\n}\n.body-scroll.scroll-next .current {\n  box-shadow: 0 0 20px rgba(0,0,0,0.2);\n}\n.body-scroll.scroll-next .current.animate {\n  transition: transform 0.5s cubic-bezier(0, 0, 0, 1);\n}\n.body-scroll.scroll-pre .current.animate {\n  transition: transform 0.5s cubic-bezier(0, 0, 0, 1);\n}\n.body-scroll.scroll-pre .next {\n  box-shadow: 0 0 20px rgba(0,0,0,0.2);\n  z-index: 2;\n}\n.body-scroll.scroll-pre .next.animate {\n  transition: transform 0.5s cubic-bezier(0, 0, 0, 1);\n}\n.body-opacity .animate {\n  transition: opacity 0.5s linear;\n}\n.body-opacity .pre,\n.body-opacity .next {\n  opacity: 0;\n}\n.body-opacity .current {\n  opacity: 1;\n}\n');
+		module.exports = $all_in_one_css_injector('.body,\n.body .pre,\n.body .current,\n.body .next {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  background-color: #fff;\n}\n.body {\n  overflow: hidden;\n}\n.body .current {\n  z-index: 1;\n}\n.body-scroll .pre {\n  transform: translateX(-33%);\n  box-shadow: 0 0 0 rgba(0,0,0,0);\n}\n.body-scroll .current {\n  transform: translateX(0);\n  box-shadow: 0 0 30px rgba(0,0,0,0.3);\n}\n.body-scroll .next {\n  transform: translateX(100%);\n  box-shadow: 0 0 0 rgba(0,0,0,0);\n}\n.body-scroll.scroll-next .animate {\n  transition: transform 0.5s cubic-bezier(0, 0, 0, 1), box-shadow 0.5s cubic-bezier(0, 1, 0, 1);\n}\n.body-scroll.scroll-pre .animate {\n  transition: transform 0.5s cubic-bezier(0, 0, 0, 1), box-shadow 0.5s cubic-bezier(1, 0, 1, 0);\n}\n.body-scroll.scroll-pre .next {\n  z-index: 2;\n}\n.body-opacity .animate {\n  transition: opacity 0.5s linear;\n}\n.body-opacity .pre,\n.body-opacity .next {\n  opacity: 0;\n}\n.body-opacity .current {\n  opacity: 1;\n}\n');
 	});
 
 	// main.tpl
@@ -89,7 +89,7 @@
 					this.animateHandler = setTimeout(function(){
 						this.container.classList.remove(animate + "-pre");
 						this.animateHandler = null;
-					}.bind(this), 500);
+					}.bind(this), 5000);
 				}.bind(this), 1);
 			},
 			next: function(animate){
@@ -124,7 +124,7 @@
 					this.animateHandler = setTimeout(function(){
 						this.container.classList.remove(animate + "-next");
 						this.animateHandler = null;
-					}.bind(this), 500);
+					}.bind(this), 5000);
 				}.bind(this), 1);
 			},
 			get: function(name){

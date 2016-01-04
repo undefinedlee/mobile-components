@@ -57,7 +57,7 @@ Body.prototype = {
 			this.animateHandler = setTimeout(function(){
 				this.container.classList.remove(animate + "-pre");
 				this.animateHandler = null;
-			}.bind(this), 500);
+			}.bind(this), 5000);
 		}.bind(this), 1);
 	},
 	next: function(animate){
@@ -92,7 +92,7 @@ Body.prototype = {
 			this.animateHandler = setTimeout(function(){
 				this.container.classList.remove(animate + "-next");
 				this.animateHandler = null;
-			}.bind(this), 500);
+			}.bind(this), 5000);
 		}.bind(this), 1);
 	},
 	get: function(name){

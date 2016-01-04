@@ -19,27 +19,21 @@ $panel
 .body-scroll
 	.pre
 		transform: translateX(-33%)
+		box-shadow: 0 0 0 rgba(0, 0, 0, 0)
 	.current
 		transform: translateX(0)
+		box-shadow: 0 0 30px rgba(0, 0, 0, .3)
 	.next
 		transform: translateX(100%)
+		box-shadow: 0 0 0 rgba(0, 0, 0, 0)
 	&.scroll-next
-		.pre
-			&.animate
-				transition: transform .5s cubic-bezier(0, 0, 0, 1)
-		.current
-			box-shadow: 0 0 20px rgba(0, 0, 0, .2)
-			&.animate
-				transition: transform .5s cubic-bezier(0, 0, 0, 1)
+		.animate
+			transition: transform .5s cubic-bezier(0, 0, 0, 1), box-shadow .5s cubic-bezier(0, 1, 0, 1)
 	&.scroll-pre
-		.current
-			&.animate
-				transition: transform .5s cubic-bezier(0, 0, 0, 1)
+		.animate
+			transition: transform .5s cubic-bezier(0, 0, 0, 1), box-shadow .5s cubic-bezier(1, 0, 1, 0)
 		.next
-			box-shadow: 0 0 20px rgba(0, 0, 0, .2)
 			z-index: 2
-			&.animate
-				transition: transform .5s cubic-bezier(0, 0, 0, 1)
 
 .body-opacity
 	.animate
